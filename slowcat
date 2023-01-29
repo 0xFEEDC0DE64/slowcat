@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cat "$@" | while IFS= LANG=C read -r -n1 -d '' a
+do
+    printf %c "$a"
+#    echo "$a"
+    sleep ${SLOWCAT_DELAY:-.001}
+done
